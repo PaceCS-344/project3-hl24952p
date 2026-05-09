@@ -1,0 +1,1192 @@
+/* ==========================================================================
+   PORTFOLIO STYLESHEET
+   Sections:
+     1. Base & Reset
+     2. Navbar
+     3. Section Helpers (titles, descriptions)
+     4. Home (Polaroid Hero + Highlights Strip)
+     5. About
+     6. Skills (Flip Cards)
+     7. Experience (Accordion)
+     8. Projects
+     9. Contact
+    10. Theme Toggle
+    11. Dark Mode Overrides
+    12. Responsive (Mobile)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. BASE & RESET
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  background-color: #f8f5f1;
+  color: #3c4c44;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   2. NAVBAR
+   ========================================================================== */
+.navbar {
+  background-color: #d8d2c4;
+  padding: 18px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #3c4c44;
+  font-weight: bold;
+  margin: 0 14px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #867668;
+}
+
+
+/* ==========================================================================
+   3. SECTION HELPERS
+   ========================================================================== */
+.about-section,
+.skills-section,
+.projects-section,
+.contact-section {
+  padding: 70px 30px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 12px;
+  color: #3c4c44;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 20px;
+  color: #6e6e6e;
+  margin-bottom: 35px;
+}
+
+
+/* ==========================================================================
+   4. HOME — POLAROID HERO + HIGHLIGHTS STRIP
+   ========================================================================== */
+
+/* ==========================================================================
+   4. HOME — POLAROID HERO + HIGHLIGHTS STRIP
+   ========================================================================== */
+
+.hero-gallery {
+  width: 100%;
+}
+
+/* PAPER-TEXTURE BACKGROUND with subtle doodles */
+.polaroid-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 30px;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  /* Layered background: cream base + paper grain + soft warm spots */
+  background-color: #f4ede1;
+  background-image:
+    radial-gradient(at 20% 30%, rgba(244, 227, 211, 0.5) 0%, transparent 40%),
+    radial-gradient(at 80% 70%, rgba(217, 200, 178, 0.35) 0%, transparent 45%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(60, 76, 68, 0.025) 0px,
+      rgba(60, 76, 68, 0.025) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(60, 76, 68, 0.02) 0px,
+      rgba(60, 76, 68, 0.02) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+}
+
+/* Decorative doodles scattered in the background */
+.doodle {
+  position: absolute;
+  font-family: "Caveat", cursive;
+  color: rgba(60, 76, 68, 0.18);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.doodle-star {
+  top: 12%;
+  left: 8%;
+  font-size: 48px;
+  transform: rotate(-15deg);
+}
+
+.doodle-squiggle {
+  bottom: 18%;
+  left: 12%;
+  font-size: 80px;
+  font-weight: bold;
+  letter-spacing: -8px;
+  transform: rotate(8deg);
+}
+
+.doodle-heart {
+  top: 20%;
+  right: 8%;
+  font-size: 42px;
+  transform: rotate(20deg);
+}
+
+/* LEFT SIDE: text + controls */
+.polaroid-intro {
+  position: relative;
+  z-index: 2;
+  max-width: 460px;
+  text-align: left;
+}
+
+.polaroid-intro h1 {
+  font-size: 46px;
+  margin: 14px 0 16px;
+  color: #3c4c44;
+  line-height: 1.15;
+}
+
+.polaroid-intro p {
+  font-size: 20px;
+  line-height: 1.65;
+  color: #5f675f;
+  margin: 0 0 22px;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: #f4e3d3;
+  color: #3c4c44;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* MEDIA CONTROLS (prev / play-pause / next + counter) */
+.polaroid-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.polaroid-ctrl-btn {
+  width: 38px;
+  height: 38px;
+  border: 2px solid #3c4c44;
+  background-color: transparent;
+  color: #3c4c44;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  padding: 0;
+}
+
+.polaroid-ctrl-btn:hover {
+  background-color: #3c4c44;
+  color: #f8f5f1;
+  transform: scale(1.08);
+}
+
+.polaroid-counter {
+  margin-left: 8px;
+  font-size: 16px;
+  color: #5f675f;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* RIGHT SIDE: polaroid stack */
+.polaroid-stack {
+  position: relative;
+  z-index: 2;
+  width: 320px;
+  height: 400px;
+}
+
+.polaroid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  background-color: #fff;
+  padding: 14px 14px 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+}
+
+/* MEDIUM-DRAMA tilt on back polaroids */
+.polaroid-back-1 {
+  height: 380px;
+  transform: rotate(-10deg) translate(-15px, 10px);
+  background-color: #f4e3d3;
+}
+
+.polaroid-back-2 {
+  height: 380px;
+  transform: rotate(8deg) translate(20px, 6px);
+  background-color: #e9e1d6;
+}
+
+/* FRONT polaroid with FLIP-IN animation */
+.polaroid-front {
+  transform: rotate(-2deg);
+  z-index: 3;
+  animation: polaroidFlipIn 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes polaroidFlipIn {
+  from {
+    opacity: 0;
+    transform: rotate(-2deg) rotateY(-90deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-2deg) rotateY(0deg);
+  }
+}
+
+/* Washi tape strip on the front polaroid */
+.polaroid-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 100px;
+  height: 24px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(217, 200, 178, 0.85),
+    rgba(217, 200, 178, 0.85) 6px,
+    rgba(244, 227, 211, 0.85) 6px,
+    rgba(244, 227, 211, 0.85) 12px
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 4;
+}
+
+.polaroid-photo {
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* objectPosition is set inline per-slide via the position field */
+}
+
+.polaroid-caption {
+  margin-top: 14px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Caveat", "Bradley Hand", cursive;
+  color: #6b5d52;
+  transform: rotate(-1.5deg);
+}
+
+.caption-text {
+  font-size: 22px;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+.caption-doodle {
+  font-size: 22px;
+  color: #c08a72;
+  display: inline-block;
+  transform: rotate(8deg);
+  flex-shrink: 0;
+}
+/* SLIDE INDICATOR DOTS */
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(60, 76, 68, 0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    border-color 0.3s ease;
+}
+
+.hero-dot:hover {
+  background-color: rgba(60, 76, 68, 0.6);
+  transform: scale(1.2);
+}
+
+.hero-dot.active {
+  background-color: #3c4c44;
+  transform: scale(1.3);
+}
+
+.hero-dot.intro-dot {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(60, 76, 68, 0.4);
+  border: 2px solid rgba(60, 76, 68, 0.3);
+}
+
+.hero-dot.intro-dot:hover {
+  background-color: rgba(60, 76, 68, 0.7);
+  border-color: #3c4c44;
+}
+
+.hero-dot.intro-dot.active {
+  background-color: #3c4c44;
+  border-color: #f4e3d3;
+  transform: scale(1.2);
+}
+
+/* HIGHLIGHTS STRIP */
+.highlights-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  padding: 35px 30px;
+  background-color: #e9e1d6;
+}
+
+.highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 22px;
+  background-color: #f8f5f1;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  min-width: 220px;
+  transition: transform 0.2s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-3px);
+}
+
+.highlight-icon {
+  font-size: 28px;
+}
+
+.highlight-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-label {
+  font-size: 14px;
+  color: #6e6e6e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.highlight-value {
+  font-size: 19px;
+  font-weight: bold;
+  color: #3c4c44;
+}
+
+/* ==========================================================================
+   5. ABOUT
+   ========================================================================== */
+.about-section {
+  padding: 80px 30px;
+  background-color: #f8f5f1;
+}
+
+.about-intro {
+  max-width: 850px;
+  margin: 0 auto 45px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.7;
+  color: #666;
+}
+
+.about-list {
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 30px;
+  border-radius: 18px;
+  background-color: #f4f4f4;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.07);
+}
+
+.about-feature:nth-child(even) {
+  background-color: #f4e3d3;
+}
+
+.about-number {
+  min-width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background-color: #3c4c44;
+  color: #f8f5f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.about-feature-text h3 {
+  font-size: 28px;
+  margin: 0 0 10px;
+  color: #3c4c44;
+}
+
+.about-feature-text p {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   6. SKILLS — CATEGORIZED CARDS WITH SCROLL-IN ANIMATION
+   ========================================================================== */
+
+.skill-group {
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.skill-group-title {
+  text-align: center;
+  font-size: 22px;
+  color: #867668;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  font-weight: bold;
+
+  /* Hidden until fade-in class is added */
+  opacity: 0;
+}
+
+.skill-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  background-color: #f4e3d3;
+  border-radius: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  font-size: 18px;
+  font-weight: bold;
+  color: #3c4c44;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Hidden until fade-in class is added */
+  opacity: 0;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.skill-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.skill-name {
+  letter-spacing: 0.3px;
+}
+
+/* SCROLL-IN ANIMATION
+   When .fade-in class is added (via JS when section enters viewport),
+   the element fades and slides up into view. */
+.skill-group-title.fade-in,
+.skill-card.fade-in {
+  animation: skillFadeUp 0.6s ease-out forwards;
+}
+
+@keyframes skillFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Preserve hover lift after animation completes */
+.skill-card.fade-in:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   7. EXPERIENCE — ACCORDION
+   ========================================================================== */
+.accordion-section {
+  padding: 70px 30px;
+}
+
+.accordion {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background-color: #f4f4f4;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.accordion-title {
+  width: 100%;
+  border: none;
+  background-color: #f4e3d3;
+  color: #3c4c44;
+  padding: 22px 26px;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordion-title:hover {
+  background-color: #e9d4c2;
+}
+
+.accordion-icon {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 22px 26px;
+  background-color: #f8f5f1;
+}
+
+.accordion-content p {
+  margin: 0;
+  color: #666;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+/* Resume download button */
+.resume-link-wrapper {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.resume-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #3c4c44;
+  color: #f8f5f1;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.resume-link:hover {
+  background-color: #867668;
+  transform: translateY(-2px);
+}
+
+/* Experience group sections */
+.experience-group {
+  max-width: 850px;
+  margin: 0 auto 40px;
+}
+
+.experience-group-title {
+  font-size: 22px;
+  color: #867668;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Accordion title — restructured for role + company + dates */
+.accordion-title-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.accordion-role {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3c4c44;
+}
+
+.accordion-company {
+  font-size: 16px;
+  color: #6e6e6e;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.accordion-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.accordion-dates {
+  font-size: 15px;
+  color: #6e6e6e;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+}
+
+/* Accordion content with bullets */
+.accordion-content ul {
+  margin: 0;
+  padding-left: 22px;
+  color: #555;
+}
+
+.accordion-content li {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.accordion-content li:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   8. PROJECTS
+   ========================================================================== */
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.project-card {
+  width: 270px;
+  min-height: 220px;
+  padding: 22px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #3c4c44;
+}
+
+.project-card p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #666;
+}
+
+
+/* ==========================================================================
+   9. CONTACT
+   ========================================================================== */
+.contact-section {
+  background-color: #e9e1d6;
+  text-align: center;
+}
+
+.contact-section p {
+  font-size: 22px;
+  margin: 12px 0;
+  color: #4d574f;
+}
+
+.contact-section a {
+  color: #3c4c44;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-section a:hover {
+  color: #867668;
+}
+
+
+/* ==========================================================================
+   10. THEME TOGGLE
+   ========================================================================== */
+.theme-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2000;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #3c4c44;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+  background-color: #867668;
+}
+
+
+/* ==========================================================================
+   11. DARK MODE OVERRIDES
+   (Grouped by section so each override sits next to its light-mode rule)
+   ========================================================================== */
+
+/* --- Body --- */
+.dark-mode {
+  background-color: #2f3832;
+  color: #f8f5f1;
+}
+
+/* --- Navbar --- */
+.dark-mode .navbar {
+  background-color: #222b26;
+}
+
+.dark-mode .navbar a,
+.dark-mode .section-title {
+  color: #f8f5f1;
+}
+
+/* --- Home / Polaroid Hero --- */
+.dark-mode .polaroid-hero {
+  background-color: #2f3832;
+}
+
+.dark-mode .polaroid-intro h1 {
+  color: #f8f5f1;
+}
+
+.dark-mode .polaroid-intro p {
+  color: #d8d2c4;
+}
+
+.dark-mode .polaroid {
+  background-color: #f8f5f1;
+}
+
+.dark-mode .polaroid-back-1 {
+  background-color: #5a4f46;
+}
+
+.dark-mode .polaroid-back-2 {
+  background-color: #46534b;
+}
+
+.dark-mode .hero-dot {
+  background-color: rgba(248, 245, 241, 0.4);
+}
+
+.dark-mode .hero-dot:hover {
+  background-color: rgba(248, 245, 241, 0.7);
+}
+
+.dark-mode .hero-dot.active {
+  background-color: #f4e3d3;
+}
+
+.dark-mode .hero-dot.intro-dot {
+  background-color: rgba(244, 227, 211, 0.6);
+  border-color: rgba(248, 245, 241, 0.5);
+}
+
+.dark-mode .hero-dot.intro-dot.active {
+  background-color: #f4e3d3;
+  border-color: #f8f5f1;
+}
+
+.dark-mode .polaroid-caption {
+  color: #d8c8a8;
+}
+
+.dark-mode .caption-doodle {
+  color: #e8b89a;
+}
+
+/* --- Home / Polaroid Hero (additions for new features) --- */
+
+/* Paper background gets darker in dark mode */
+.dark-mode .polaroid-hero {
+  background-color: #2f3832;
+  background-image:
+    radial-gradient(at 20% 30%, rgba(90, 79, 70, 0.4) 0%, transparent 40%),
+    radial-gradient(at 80% 70%, rgba(70, 83, 75, 0.4) 0%, transparent 45%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(248, 245, 241, 0.025) 0px,
+      rgba(248, 245, 241, 0.025) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+.dark-mode .doodle {
+  color: rgba(244, 227, 211, 0.2);
+}
+
+.dark-mode .polaroid-ctrl-btn {
+  border-color: #f4e3d3;
+  color: #f4e3d3;
+}
+
+.dark-mode .polaroid-ctrl-btn:hover {
+  background-color: #f4e3d3;
+  color: #2f3832;
+}
+
+.dark-mode .polaroid-counter {
+  color: #d8d2c4;
+}
+
+.dark-mode .polaroid-tape {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(244, 227, 211, 0.7),
+    rgba(244, 227, 211, 0.7) 6px,
+    rgba(217, 200, 178, 0.7) 6px,
+    rgba(217, 200, 178, 0.7) 12px
+  );
+}
+
+/* --- Highlights strip --- */
+.dark-mode .highlights-strip {
+  background-color: #3c4c44;
+}
+
+.dark-mode .highlight-card {
+  background-color: #46534b;
+}
+
+.dark-mode .highlight-label {
+  color: #d8d2c4;
+}
+
+.dark-mode .highlight-value {
+  color: #f8f5f1;
+}
+
+/* --- About --- */
+.dark-mode .about-section {
+  background-color: #2f3832;
+}
+
+.dark-mode .about-intro {
+  color: #f0e8dd;
+}
+
+.dark-mode .about-feature {
+  background-color: #46534b;
+}
+
+.dark-mode .about-feature:nth-child(even) {
+  background-color: #5a4f46;
+}
+
+.dark-mode .about-number {
+  background-color: #f4e3d3;
+  color: #2f3832;
+}
+
+.dark-mode .about-feature-text h3,
+.dark-mode .about-feature-text p {
+  color: #f8f5f1;
+}
+
+/* --- Skills (flip cards) --- */
+.dark-mode .flip-card-front {
+  background-color: #3c4e3b;
+  color: #f8f5f1;
+}
+
+/* --- Experience (accordion) --- */
+.dark-mode .accordion-item {
+  background-color: #46534b;
+}
+
+.dark-mode .accordion-title {
+  background-color: #5a4f46;
+  color: #f8f5f1;
+}
+
+.dark-mode .accordion-title:hover {
+  background-color: #6b5d52;
+}
+
+.dark-mode .accordion-content {
+  background-color: #3c4c44;
+}
+
+.dark-mode .accordion-content p {
+  color: #f8f5f1;
+}
+
+.dark-mode .resume-link {
+  background-color: #f4e3d3;
+  color: #2f3832;
+}
+
+.dark-mode .resume-link:hover {
+  background-color: #d8c8a8;
+}
+
+.dark-mode .experience-group-title {
+  color: #d8c8a8;
+}
+
+.dark-mode .accordion-role {
+  color: #f8f5f1;
+}
+
+.dark-mode .accordion-company,
+.dark-mode .accordion-dates {
+  color: #d8d2c4;
+}
+
+.dark-mode .accordion-content ul {
+  color: #f0e8dd;
+}
+
+.dark-mode .accordion-content li {
+  color: #f0e8dd;
+}
+
+/* --- Projects --- */
+.dark-mode .project-card {
+  background-color: #46534b;
+}
+
+.dark-mode .project-card h3 {
+  color: #f8f5f1;
+}
+
+.dark-mode .project-card p {
+  color: #f0e8dd;
+}
+
+/* --- Contact --- */
+.dark-mode .contact-section {
+  background-color: #2f3832;
+}
+
+.dark-mode .contact-section p {
+  color: #f8f5f1;
+}
+
+.dark-mode .contact-section a {
+  color: #f4e3d3;
+}
+
+.dark-mode .contact-section a:hover {
+  color: #d8d2c4;
+}
+
+
+/* ==========================================================================
+   12. RESPONSIVE (MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar a {
+    display: inline-block;
+    margin: 6px 10px;
+    font-size: 17px;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 32px;
+  }
+
+  /* Home / Polaroid */
+  .polaroid-hero {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .polaroid-intro {
+    text-align: center;
+  }
+
+  .polaroid-intro h1 {
+    font-size: 32px;
+  }
+
+  .polaroid-stack {
+    width: 280px;
+    height: 360px;
+  }
+
+  .polaroid {
+    width: 280px;
+  }
+
+  .polaroid-photo {
+    height: 250px;
+  }
+
+  .hero-dots {
+    justify-content: center;
+  }
+
+  .highlight-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Skills + Projects */
+  .flip-card,
+  .project-card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  /* Contact */
+  .contact-section p {
+    font-size: 18px;
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    bottom: 12px;
+    right: 12px;
+    font-size: 14px;
+  }
+}
+
+  @media (max-width: 700px) {
+    .about-feature {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .about-intro {
+      font-size: 19px;
+    }
+
+  @media (max-width: 600px) {
+    .accordion-title {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .accordion-meta {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .accordion-role {
+     font-size: 19px;
+   }
+  }
+}
