@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Haylie-portfolio/static/css/main.fcfff810.css",
+    "main.css": "/Haylie-portfolio/static/css/main.9dc837a5.css",
     "main.js": "/Haylie-portfolio/static/js/main.b4935c15.js",
     "index.html": "/Haylie-portfolio/index.html",
-    "main.fcfff810.css.map": "/Haylie-portfolio/static/css/main.fcfff810.css.map",
+    "main.9dc837a5.css.map": "/Haylie-portfolio/static/css/main.9dc837a5.css.map",
     "main.b4935c15.js.map": "/Haylie-portfolio/static/js/main.b4935c15.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcfff810.css",
+    "static/css/main.9dc837a5.css",
     "static/js/main.b4935c15.js"
   ]
 }
