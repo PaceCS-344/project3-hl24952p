@@ -118,8 +118,8 @@ function Experience() {
       </p>
 
       <div className="resume-link-wrapper">
-        <a className="resume-link" href="/Resume - Haylie Lau.docx" target="Resume - Haylie Lau.docx" rel="noopener noreferrer">
-          Download Resume
+        <a className="resume-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+          Click to Download Resume 
         </a>
       </div>
 
