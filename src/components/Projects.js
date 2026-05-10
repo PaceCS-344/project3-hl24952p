@@ -6,8 +6,6 @@ const projects = [
     description:
       "This site! A single-page portfolio built in React, featuring a theme toggle, rotating polaroid hero, accordion experience section, and animated skill cards.",
     tags: ["React", "JavaScript", "CSS"],
-    link: "https://github.com/hl24952p",
-    linkLabel: "View My GitHub →",
     note: "Personal project",
   },
   {
@@ -15,8 +13,6 @@ const projects = [
     description:
       "Console-based banking application supporting accounts, transactions, and balance tracking. Focused on clean class design and user input handling.",
     tags: ["Java", "OOP"],
-    link: "https://github.com/hl24952p/Bank-System---Java",
-    linkLabel: "View on GitHub →",
     note: "Class project",
   },
   {
@@ -26,8 +22,6 @@ const projects = [
     tags: ["Teamwork", "Web", "Communication"],
     link: "https://hl24952p.github.io/Commuters-Community-Website/",
     linkLabel: "View Live Site →",
-    repoLink: "https://github.com/hl24952p/Commuters-Community-Website",
-    repoLinkLabel: "View Repo →",
     note: "Group project",
   },
 ];

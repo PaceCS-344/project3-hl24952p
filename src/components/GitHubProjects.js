@@ -35,7 +35,7 @@ function GitHubProjects() {
   return (
     <div className="github-section">
       <div className="github-section-divider"></div>
-      <h3 className="github-section-title">Everything Else on GitHub</h3>
+      <h3 className="github-section-title">Everything on GitHub</h3>
       <p className="github-section-description">Live from my GitHub</p>
 
       {!loading && !error && repos.length > 0 && (

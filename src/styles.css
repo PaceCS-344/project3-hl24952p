@@ -1596,6 +1596,9 @@ section {
   .polaroid-intro {
     text-align: center;
   }
+  .polaroid-controls {
+    justify-content: center;
+  }
 
   .polaroid-intro h1 {
     font-size: 32px;
