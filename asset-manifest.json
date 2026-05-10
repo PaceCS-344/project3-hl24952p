@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Haylie-portfolio/static/css/main.fcfff810.css",
+    "main.js": "/Haylie-portfolio/static/js/main.1e46ee9a.js",
+    "index.html": "/Haylie-portfolio/index.html",
+    "main.fcfff810.css.map": "/Haylie-portfolio/static/css/main.fcfff810.css.map",
+    "main.1e46ee9a.js.map": "/Haylie-portfolio/static/js/main.1e46ee9a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcfff810.css",
+    "static/js/main.1e46ee9a.js"
+  ]
+}
