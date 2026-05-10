@@ -150,9 +150,8 @@ function Home() {
             {homeSlides.map((_, i) => (
               <button
                 key={i}
-                className={`hero-dot ${i === currentIndex ? "active" : ""} ${
-                  i === 0 ? "intro-dot" : ""
-                }`}
+                className={`hero-dot ${i === currentIndex ? "active" : ""} ${i === 0 ? "intro-dot" : ""
+                  }`}
                 onClick={() => setCurrentIndex(i)}
                 aria-label={
                   i === 0 ? "Go to intro" : `Go to slide ${i + 1}`
@@ -184,10 +183,23 @@ function Home() {
                 style={{ objectPosition: current.position }}
               />
             </div>
-
-            <div className="polaroid-caption">
-              <span className="caption-text">{current.caption}</span>
-              <span className="caption-doodle">{current.doodle}</span>
+            <div className="polaroid-caption" key={`caption-${currentIndex}`}>
+              <span
+                className="caption-text typewriter"
+                style={{
+                  animationDuration: `${Math.max(current.caption.length * 0.04, 0.6)}s`,
+                }}
+              >
+                {current.caption}
+              </span>
+              <span
+                className="caption-doodle"
+                style={{
+                  animationDelay: `${Math.max(current.caption.length * 0.04, 0.6)}s`,
+                }}
+              >
+                {current.doodle}
+              </span>
             </div>
           </div>
         </div>
