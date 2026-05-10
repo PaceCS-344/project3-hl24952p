@@ -1,3 +1,5 @@
+import GitHubStats from "./GitHubStats";
+
 const aboutItems = [
   {
     number: "01",
@@ -38,6 +40,7 @@ function About() {
           </div>
         ))}
       </div>
+      <GitHubStats />
     </section>
   );
 }

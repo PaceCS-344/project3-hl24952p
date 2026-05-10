@@ -95,10 +95,6 @@ section {
    4. HOME — POLAROID HERO + HIGHLIGHTS STRIP
    ========================================================================== */
 
-/* ==========================================================================
-   4. HOME — POLAROID HERO + HIGHLIGHTS STRIP
-   ========================================================================== */
-
 .hero-gallery {
   width: 100%;
 }
@@ -559,6 +555,99 @@ section {
   margin: 0;
 }
 
+/* GITHUB STATS CARD (in About section) */
+.github-stats {
+  max-width: 700px;
+  margin: 50px auto 0;
+}
+
+.github-stats-link {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.github-stats-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.github-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #f4e3d3;
+  flex-shrink: 0;
+}
+
+.github-stats-info {
+  flex: 1;
+}
+
+.github-stats-name {
+  font-size: 22px;
+  margin: 0 0 2px;
+  color: #3c4c44;
+}
+
+.github-stats-handle {
+  font-size: 15px;
+  color: #867668;
+  margin: 0 0 8px;
+  font-style: italic;
+}
+
+.github-stats-bio {
+  font-size: 16px;
+  color: #5f675f;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.github-stats-numbers {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.github-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.github-stat-value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3c4c44;
+  line-height: 1;
+}
+
+.github-stat-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6e6e6e;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .github-stats-link {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .github-stats-numbers {
+    justify-content: center;
+  }
+}
 
 /* ==========================================================================
    6. SKILLS — CATEGORIZED CARDS WITH SCROLL-IN ANIMATION
@@ -797,9 +886,6 @@ section {
 /* ==========================================================================
    8. PROJECTS
    ========================================================================== */
-/* ==========================================================================
-   8. PROJECTS
-   ========================================================================== */
 
 .project-gallery {
   display: grid;
@@ -875,9 +961,15 @@ section {
   font-weight: bold;
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: auto;
+}
+
 .project-link {
   display: inline-block;
-  margin-top: auto;
   color: #3c4c44;
   text-decoration: none;
   font-weight: bold;
@@ -889,6 +981,179 @@ section {
   color: #867668;
 }
 
+.project-link-secondary {
+  color: #867668;
+}
+
+.project-link-secondary:hover {
+  color: #3c4c44;
+}
+
+/* GITHUB API SECTION  */
+.github-section {
+  max-width: 1100px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.github-section-divider {
+  height: 1px;
+  background-color: rgba(60, 76, 68, 0.15);
+  margin: 0 auto 30px;
+  max-width: 200px;
+}
+
+.github-section-title {
+  text-align: center;
+  font-size: 18px;
+  color: #867668;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.github-section-description {
+  text-align: center;
+  font-size: 14px;
+  color: #6e6e6e;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.github-status {
+  text-align: center;
+  font-size: 15px;
+  color: #6e6e6e;
+  padding: 20px;
+}
+
+.github-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.github-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background-color: #f8f5f1;
+  border: 1px solid rgba(60, 76, 68, 0.12);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 80px;
+}
+
+.github-card:hover {
+  transform: translateY(-2px);
+  border-color: #867668;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.github-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.github-card-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #3c4c44;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.github-fork-badge {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #e9e1d6;
+  color: #867668;
+  padding: 2px 6px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.github-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.github-language {
+  color: #3c4c44;
+  font-weight: bold;
+}
+
+.github-language-empty {
+  color: #6e6e6e;
+}
+
+.github-stars {
+  color: #867668;
+}
+/* GITHUB SEARCH BAR */
+.github-search-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 24px;
+}
+
+.github-search {
+  width: 100%;
+  padding: 10px 40px 10px 16px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #3c4c44;
+  background-color: #fff;
+  border: 1.5px solid rgba(60, 76, 68, 0.2);
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.github-search:focus {
+  border-color: #867668;
+  box-shadow: 0 0 0 3px rgba(134, 118, 104, 0.15);
+}
+
+.github-search::placeholder {
+  color: #a89484;
+  font-style: italic;
+}
+
+.github-search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: rgba(60, 76, 68, 0.15);
+  color: #3c4c44;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.github-search-clear:hover {
+  background-color: rgba(60, 76, 68, 0.3);
+}
 /* ==========================================================================
    9. CONTACT
    ========================================================================== */
@@ -1105,6 +1370,30 @@ section {
 .dark-mode .about-feature-text p {
   color: #f8f5f1;
 }
+.dark-mode .github-stats-link {
+  background-color: #46534b;
+}
+
+.dark-mode .github-avatar {
+  border-color: #5a4f46;
+}
+
+.dark-mode .github-stats-name,
+.dark-mode .github-stat-value {
+  color: #f8f5f1;
+}
+
+.dark-mode .github-stats-handle {
+  color: #d8c8a8;
+}
+
+.dark-mode .github-stats-bio {
+  color: #d8d2c4;
+}
+
+.dark-mode .github-stat-label {
+  color: #d8d2c4;
+}
 
 /* --- Skills (flip cards) --- */
 .dark-mode .flip-card-front {
@@ -1165,7 +1454,6 @@ section {
 }
 
 /* --- Projects --- */
-/* --- Projects --- */
 .dark-mode .project-card {
   background-color: #46534b;
 }
@@ -1196,6 +1484,74 @@ section {
   color: #d8d2c4;
 }
 
+.dark-mode .project-link-secondary {
+  color: #d8c8a8;
+}
+
+.dark-mode .project-link-secondary:hover {
+  color: #f4e3d3;
+}
+.dark-mode .github-section-title {
+  color: #d8c8a8;
+}
+
+.dark-mode .github-section-divider {
+  background-color: rgba(248, 245, 241, 0.15);
+}
+
+.dark-mode .github-card {
+  background-color: #46534b;
+  border-color: rgba(248, 245, 241, 0.1);
+}
+
+.dark-mode .github-card:hover {
+  border-color: #f4e3d3;
+}
+
+.dark-mode .github-card-name {
+  color: #f8f5f1;
+}
+
+.dark-mode .github-fork-badge {
+  background-color: #5a4f46;
+  color: #f4e3d3;
+}
+
+.dark-mode .github-language {
+  color: #f4e3d3;
+}
+
+.dark-mode .github-language-empty {
+  color: #d8d2c4;
+}
+
+.dark-mode .github-stars {
+  color: #d8c8a8;
+}
+
+.dark-mode .github-search {
+  background-color: #46534b;
+  color: #f8f5f1;
+  border-color: rgba(248, 245, 241, 0.2);
+}
+
+.dark-mode .github-search:focus {
+  border-color: #f4e3d3;
+  box-shadow: 0 0 0 3px rgba(244, 227, 211, 0.15);
+}
+
+.dark-mode .github-search::placeholder {
+  color: #a89484;
+}
+
+.dark-mode .github-search-clear {
+  background-color: rgba(248, 245, 241, 0.15);
+  color: #f8f5f1;
+}
+
+.dark-mode .github-search-clear:hover {
+  background-color: rgba(248, 245, 241, 0.3);
+}
 /* --- Contact --- */
 .dark-mode .contact-section {
   background-color: #2f3832;

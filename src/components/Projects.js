@@ -1,3 +1,5 @@
+import GitHubProjects from "./GitHubProjects";
+
 const projects = [
   {
     title: "React Portfolio",
@@ -5,6 +7,7 @@ const projects = [
       "This site! A single-page portfolio built in React, featuring a theme toggle, rotating polaroid hero, accordion experience section, and animated skill cards.",
     tags: ["React", "JavaScript", "CSS"],
     link: "https://github.com/hl24952p",
+    linkLabel: "View My GitHub →",
     note: "Personal project",
   },
   {
@@ -13,14 +16,18 @@ const projects = [
       "Console-based banking application supporting accounts, transactions, and balance tracking. Focused on clean class design and user input handling.",
     tags: ["Java", "OOP"],
     link: "https://github.com/hl24952p/Bank-System---Java",
+    linkLabel: "View on GitHub →",
     note: "Class project",
   },
   {
     title: "Community Group Website",
     description:
-      "Group project where I served as primary liaison between the team and a community partner. Coordinated communication and deliverables through the development process. The link below is to a copy of what the website was!",
+      "Group project where I served as primary liaison between the team and a community partner. Coordinated communication and deliverables through the development process.",
     tags: ["Teamwork", "Web", "Communication"],
     link: "https://hl24952p.github.io/Commuters-Community-Website/",
+    linkLabel: "View Live Site →",
+    repoLink: "https://github.com/hl24952p/Commuters-Community-Website",
+    repoLinkLabel: "View Repo →",
     note: "Group project",
   },
 ];
@@ -51,21 +58,25 @@ function Projects() {
               ))}
             </div>
 
-            {p.link && (
-              <a
-                className="project-link"
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View on GitHub →
-              </a>
-            )}
+            <div className="project-links">
+              {p.link && (
+                <a className="project-link" href={p.link} target="_blank" rel="noopener noreferrer">
+                  {p.linkLabel || "View on GitHub →"}
+                </a>
+              )}
+              {p.repoLink && (
+                <a className="project-link project-link-secondary" href={p.repoLink} target="_blank" rel="noopener noreferrer">
+                  {p.repoLinkLabel || "View Repo →"}
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
+
+      <GitHubProjects />
     </section>
   );
 }
 
-export default Projects; 
+export default Projects;
